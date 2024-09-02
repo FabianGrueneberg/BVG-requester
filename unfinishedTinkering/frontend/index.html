@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plotly Plot Display</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Plotly Plot Display</h1>
+        <div id="plot"></div>
+    </div>
+
+    <script>
+        // Example Plotly plot
+        var trace1 = {
+            x: [1, 2, 3, 4, 5],
+            y: [10, 15, 13, 17, 14],
+            type: 'scatter'
+        };
+
+        var layout = {
+            title: 'Simple Plot',
+            xaxis: { title: 'X Axis' },
+            yaxis: { title: 'Y Axis' }
+        };
+
+        Plotly.newPlot('plot', [trace1], layout);
+    </script>
+</body>
+</html>

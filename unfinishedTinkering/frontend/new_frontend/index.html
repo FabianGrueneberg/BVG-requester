@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Route Analysis Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bus Route Analysis Dashboard</h1>
+        <p>Analyze bus timings, directions, and variations</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Analysis</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <div class="filters">
+                <label for="station">Select Station:</label>
+                <select id="station" name="station">
+                    <option value="station1">Station 1</option>
+                    <option value="station2">Station 2</option>
+                </select>
+                <label for="date-range">Select Date Range:</label>
+                <input type="date" id="start-date" name="start-date">
+                <input type="date" id="end-date" name="end-date">
+                <button id="apply-filters">Apply Filters</button>
+                <button id="reset">Reset</button>
+            </div>
+        </section>
+
+        <section id="analysis">
+            <h2>Directional Analysis</h2>
+            <div class="direction" id="direction1">
+                <h3>Direction 1</h3>
+                <div class="plot" id="plot1"></div>
+                <div class="plot" id="plot2"></div>
+                <div class="plot" id="plot3"></div>
+                <div class="stats">
+                    <p><strong>Mean:</strong> <span id="mean1">-</span></p>
+                    <p><strong>Standard Deviation:</strong> <span id="std1">-</span></p>
+                    <p><strong>3 Sigma:</strong> <span id="sigma1">-</span></p>
+                </div>
+            </div>
+            <div class="direction" id="direction2">
+                <h3>Direction 2</h3>
+                <div class="plot" id="plot4"></div>
+                <div class="plot" id="plot5"></div>
+                <div class="plot" id="plot6"></div>
+                <div class="stats">
+                    <p><strong>Mean:</strong> <span id="mean2">-</span></p>
+                    <p><strong>Standard Deviation:</strong> <span id="std2">-</span></p>
+                    <p><strong>3 Sigma:</strong> <span id="sigma2">-</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="comments">
+            <h2>Comments</h2>
+            <textarea placeholder="Enter your comments here..."></textarea>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Bus Analysis Co. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

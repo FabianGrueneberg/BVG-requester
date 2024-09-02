@@ -1,0 +1,22 @@
+FROM python:3.10
+
+# copy application code
+ADD app /opt/app
+COPY setup.ini /opt/app
+COPY loggingConfig.json /opt/app
+COPY htmlBody.html /opt/app
+RUN mkdir /opt/app/logData
+WORKDIR /opt/app
+
+
+# load libs
+RUN python3 -m pip install --no-cache-dir -r requirements.txt
+
+# expose port
+EXPOSE 8000
+
+# start app
+#uvicorn main:app --reload
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+
+

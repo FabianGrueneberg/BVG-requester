@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Route Analysis Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Bus Route Analysis Dahsboard</h1>
+        <p>Analyse bus delays</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#Pankow">S+U Pankow</a></li>
+            <li><a href="#Jungfernheide">S+U Jungfernheide</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="general">
+            <h2>General information</h2>
+            <div class="textbox" id="textbox">
+                Bla bla bla.
+            </div>
+            <div class="statistics">
+                <p><strong>Mean:</strong> {mean:.2f}</p>
+                <p><strong>Standard Deviation:</strong> {std_dev:.2f}</p>
+                <p><strong>3-Sigma Value:</strong> {three_sigma:.2f}</p>
+            </div>
+        </section>
+
+        <section id="analysis">
+            <ul id="image-container">
+                <li id="plot">
+                    <img src="data:image/png;base64, {histogram_plot_html}" alt="Histogram plot" class="image-size">
+                </li>
+                <li id="plot">
+                    <img src="data:image/png;base64, {autocorrelation_plot_html}" alt="Autocorrelation plot" class="image-size">
+                </li>
+                <li id="plot">
+                    <img src="data:image/png;base64, {boxplot_plot_html}" alt="Boxplot plot" class="image-size">
+                </li>
+            </ul>
+        </section>
+
+        <section id="remarks">
+            <div class="textbox", id="textbox">
+                Bla bla bla.
+            </div>
+        </section>
+    </main>
+    <footer>
+    </footer>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="scipts.js"></script>
+</body>
+</html>

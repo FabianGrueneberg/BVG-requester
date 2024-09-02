@@ -1,0 +1,20 @@
+Build:
+sudo docker build -t <Name des Outputs> -f <Dockerfile name> .
+
+Run:
+sudo docker run -d --rm --net <Netzname> --name <Containername> -p <Ports> -v <Volume name>:/<folder to mount to> <Image name>
+-it Ermöglicht das eingeben von Commands im Container
+
+Netzwerk erstellen:
+sudo docker network create <Name des Netzwerks>
+
+Volumes:
+sudo docker volume create <Volume name>
+
+Allgemein:
+sudo docker ps -a # Alle existierenden Container anzeigen
+
+Konkrete Befehle:
+sudo docker run --rm -it -d --net app-net --name my-mongodb -p 27017:27017 -v /mongoDB:/data/db mongo:4.4
+sudo docker run --rm -it -d --net app-net --name app -p 8000:8000 fabiangruene/bvg-app
+sudo docker run --rm -it -d --net app-net --name crawler -p 8081:8081 fabiangruene/bvg-crawler
